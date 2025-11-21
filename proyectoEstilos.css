@@ -1,0 +1,209 @@
+/*<--Voy a intentar explicar cada clase sobre lo que hice y porque-->*/
+
+/*En el body no hice gran cosa tan solo le puse un margen de cero una letra predeterminada 
+para toda la pagina, el color de fondo para la parte de abajo donde esta el apartado
+"sobre mi" y el color para el color de la letra del titulo */
+body {
+margin: 0;
+font-family: Arial, sans-serif;
+background: #9DC2C3;
+color: #324347;
+}
+/*Explicare lo más "raro" que hice como se puede ver puse el display flex para que este todo
+como en una linea digamos, le puse un espacio entre ellos para que se separe del logo. Puse que
+sea sticky por eso mismo tuve que poner z-index para que no quede detras del contenido. Podemos 
+ver que en box-shadow puse rgba que es basicamnete un color seleccionado  */
+header {
+background: #324347;
+color: #fff;
+padding: 0px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+position: sticky;
+top: 0;
+z-index: 1000;
+background-image: url(../Visuales/FondoNavegador4.jpg);
+box-shadow: 0 4px 5px rgba(0,0,0,0.1);
+}
+
+header img{
+height: 60px;
+width: 60px;
+}
+
+.logo img{
+    margin: 15px;
+}
+/*En este apartado lo mas "raro" que hice fue el "style none" que es basicamente como es una lista 
+para que no salgan los puntos de la lista que siempre salen en el lado izquierdo*/
+nav ul {
+list-style: none;
+display: flex;
+gap: 20px;
+margin: 15px;
+padding: 0;
+}
+/*Para hacer la transicion consulte la pagina que puese en la documentacion en pdf, es basicanmente
+que la transición dura 3 segundos y ease es que la transición sea suave*/
+nav a {
+color: #324347;
+text-decoration: none;
+font-weight: bold;
+padding: 6px 12px;
+border-radius: 8px;
+transition: .3s ease;
+}
+
+nav a:hover{
+background-color: #C5DCDC;
+color: #324347;
+}
+/*En esta parte solo puse que su posicion sea relativa para que lo pueda mover sin afectar
+a los demás elementos. Le puse la imagen de fondo y le especifique que no se repita la 
+propia imagen*/
+.intro {
+text-align: center;
+padding: 410px;
+background: #C5DCDC;
+font-size: 2em;
+position: relative;
+background-image: url(../Visuales/Fondo2.jpg);
+background-repeat: no-repeat;
+color: #C5DCDC;
+}
+
+.container {
+padding: 40px;
+max-width: 1000px;
+margin: auto;
+}
+
+.titulo{
+font-weight: bold;
+color: #324347;
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.correcto{
+font-size: 18px;
+color: white;
+}
+
+.proyectos {
+display: flex;
+gap: 20px;
+flex-wrap: wrap;
+}
+/*En este caso le puse como una sombra para que se vea un poco de profundidad. El primer 0
+es para que se desplace de forma horizontal, el 2 desplazamiento vertical, el 5 es cuanto 
+se difumina y lo que viene como ultimo del rgba es el color de sombra y el nivel de 
+opacidad */
+.carta {
+background: #324347;
+padding: 20px;
+border-radius: 15px;
+box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+flex: 1;
+min-width: 200px;
+color: white;
+text-align: center;
+}
+/*El display flex:1 son las tres cajas que ocupan el mismo ancho dentro de un contenedor flex*/
+.cartaTexto{
+flex: 1;              
+display: flex;
+flex-direction: column;
+justify-content: center;
+color: white;
+text-align: center;
+}
+.carta img{
+flex: 1;               
+object-fit: contain;   
+width: 100%;
+}
+/*Desde aqui hasta hover es para que funcione la aparicion en las habilidades, tuve que consultar
+varias páginas para entender como poner cada cosa sobre todo lo de transform, */
+.skills {
+display: flex;
+flex-wrap: wrap;
+gap: 12px;
+}
+
+.skill {
+position: relative;
+background: rgba(255, 255, 255, 0.25);
+padding: 12px 18px;
+border-radius: 15px;
+font-weight: bold;
+color: white;
+min-width: 154px; 
+text-align: center;
+cursor: pointer;
+}
+
+.abajo{
+position: absolute;
+top: 55px;              /* separarlo visualmente */
+left: 0;
+width: 165px;
+padding: 12px;
+background: #324347(255, 255, 255, 0.95);
+color: white;
+border-radius: 12px;
+box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+opacity: 0;
+visibility: hidden;
+transform: translateY(-8px);
+transition: all .25s ease;
+font-weight: normal;
+}
+
+.skill:hover .abajo {
+opacity: 1;
+visibility: visible;
+transform: translateY(0);
+}
+
+form input, form textarea {
+width: 100%;
+padding: 10px;
+margin-top: 5px;
+border: 2px solid #324347;
+border-radius: 15px;
+}
+
+button {
+padding: 10px 20px;
+background:#324347;
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+
+.redes{
+display: flex;
+justify-content: center;
+gap: 20px;
+}
+
+.redes a {
+text-decoration: none;
+color: #333;
+font-weight: bold;
+}
+
+.redes a img{
+width: 40px;
+height: 40px;
+}
+
+footer {
+background: #324347;
+color: white;
+text-align: center;
+padding: 20px;
+background-image: url(../Visuales/Fondo2.jpg);
+}
